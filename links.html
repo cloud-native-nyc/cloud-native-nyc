@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Links & Resources - Cloud Native NYC</title>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
+
+	<style>
+		:root {
+			--bg-primary: #0b0f19;
+			--bg-secondary: #0f172a;
+			--accent-cyan: #38bdf8;
+			--accent-green: #00ff88;
+			--accent-orange: #ff9f43;
+			--text-primary: #ffffff;
+			--text-secondary: #94a3b8;
+			--card-bg: rgba(30, 41, 59, 0.4);
+			--card-border: rgba(255, 255, 255, 0.08);
+			--shadow-glow: 0 10px 30px rgba(56, 189, 248, 0.15);
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: var(--bg-primary);
+			color: var(--text-primary);
+			font-family: 'Plus Jakarta Sans', sans-serif;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			overflow-x: hidden;
+			position: relative;
+		}
+
+		/* Slow-moving gradient background mesh */
+		.mesh-background {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+			background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+				radial-gradient(circle at 90% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 40%),
+				radial-gradient(circle at 50% 50%, rgba(255, 159, 67, 0.05) 0%, transparent 50%);
+			filter: blur(80px);
+			animation: backgroundGlow 15s ease-in-out infinite alternate;
+		}
+
+		@keyframes backgroundGlow {
+			0% {
+				transform: scale(1);
+			}
+
+			100% {
+				transform: scale(1.1) translate(2%, 2%);
+			}
+		}
+
+		.container {
+			width: 100%;
+			max-width: 480px;
+			padding: 40px 20px;
+			box-sizing: border-box;
+			text-align: center;
+			z-index: 1;
+		}
+
+		/* Header Styles */
+		.logo-badge {
+			background: white;
+			padding: 12px 24px;
+			border-radius: 20px;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 24px;
+			transition: transform 0.3s ease;
+		}
+
+		.logo-badge:hover {
+			transform: scale(1.05);
+		}
+
+		.logo-badge img {
+			max-height: 70px;
+			width: auto;
+			object-fit: contain;
+		}
+
+		h1 {
+			font-family: 'Outfit', sans-serif;
+			font-size: 2.2em;
+			font-weight: 800;
+			margin: 0;
+			background: linear-gradient(135deg, #ffffff 40%, #94a3b8);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			letter-spacing: -0.02em;
+		}
+
+		.subtitle {
+			font-size: 0.95em;
+			color: var(--text-secondary);
+			margin: 10px 0 35px 0;
+			line-height: 1.5;
+		}
+
+		/* Link list buttons */
+		.links-list {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			width: 100%;
+		}
+
+		.link-card {
+			display: flex;
+			align-items: center;
+			padding: 18px 24px;
+			background: var(--card-bg);
+			border: 1px solid var(--card-border);
+			border-radius: 20px;
+			text-decoration: none;
+			color: var(--text-primary);
+			box-sizing: border-box;
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+		}
+
+		.link-card:hover {
+			background: rgba(255, 255, 255, 0.06);
+			transform: translateY(-3px);
+			box-shadow: var(--shadow-glow);
+		}
+
+		.link-icon {
+			width: 40px;
+			height: 40px;
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 18px;
+			flex-shrink: 0;
+			transition: transform 0.3s ease;
+		}
+
+		.link-card:hover .link-icon {
+			transform: scale(1.1);
+		}
+
+		.icon-cncf {
+			background: rgba(56, 189, 248, 0.15);
+			color: var(--accent-cyan);
+			border: 1px solid rgba(56, 189, 248, 0.2);
+		}
+
+		.icon-slack {
+			background: rgba(255, 159, 67, 0.15);
+			color: var(--accent-orange);
+			border: 1px solid rgba(255, 159, 67, 0.2);
+		}
+
+		.icon-github {
+			background: rgba(255, 255, 255, 0.1);
+			color: #fff;
+			border: 1px solid rgba(255, 255, 255, 0.15);
+		}
+
+		.icon-linkedin {
+			background: rgba(10, 102, 194, 0.15);
+			color: #0a66c2;
+			border: 1px solid rgba(10, 102, 194, 0.2);
+		}
+
+		.link-content {
+			text-align: left;
+			flex-grow: 1;
+		}
+
+		.link-title {
+			font-family: 'Outfit', sans-serif;
+			font-size: 1.1em;
+			font-weight: 600;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.link-desc {
+			font-size: 0.75em;
+			color: var(--text-secondary);
+			margin: 4px 0 0 0;
+			line-height: 1.4;
+		}
+
+		.arrow-icon {
+			margin-left: 12px;
+			color: var(--text-secondary);
+			transition: transform 0.3s ease, color 0.3s ease;
+			flex-shrink: 0;
+		}
+
+		.link-card:hover .arrow-icon {
+			transform: translateX(4px);
+			color: var(--text-primary);
+		}
+
+		/* Footer */
+		footer {
+			margin-top: 50px;
+			font-size: 0.75em;
+			color: var(--text-secondary);
+		}
+
+		footer a {
+			color: var(--accent-cyan);
+			text-decoration: none;
+		}
+
+		footer a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="mesh-background"></div>
+
+	<div class="container">
+		<div class="logo-badge" style="margin-bottom: 24px; padding: 12px 24px; border-radius: 16px;">
+			<img src="assets/images/logo.jpg" alt="Cloud Native NYC Logo" style="max-height: 80px; width: auto; object-fit: contain;">
+		</div>
+
+		<h1>Cloud Native NYC</h1>
+		<p class="subtitle">Welcome! Quick access to our community platforms, governance draft, and social updates.</p>
+
+		<div class="links-list">
+			<!-- Upcoming Event -->
+			<a href="https://ocgroups.dev/cncf/group/5pcu8cb/event/pv5u8yj" target="_blank" rel="noopener noreferrer"
+				class="link-card" style="--shadow-glow: 0 10px 30px rgba(255, 159, 67, 0.2); border-color: var(--accent-orange);">
+				<div class="link-icon icon-slack" style="background: rgba(255, 159, 67, 0.15); color: var(--accent-orange);">
+					<!-- Calendar/Event Icon -->
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round">
+						<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+						<line x1="16" y1="2" x2="16" y2="6"></line>
+						<line x1="8" y1="2" x2="8" y2="6"></line>
+						<line x1="3" y1="10" x2="21" y2="10"></line>
+					</svg>
+				</div>
+				<div class="link-content">
+					<div class="link-title" style="color: var(--accent-orange); font-weight: 700;">Upcoming Event: June 26th</div>
+					<div class="link-desc">OTel Night NYC @ NYT Building — RSVP & Volunteer</div>
+				</div>
+				<div class="arrow-icon" style="color: var(--accent-orange);">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round">
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</div>
+			</a>
+
+			<!-- CNCF Chapter Portal -->
+			<a href="https://ocgroups.dev/cncf/group/5pcu8cb" target="_blank" rel="noopener noreferrer"
+				class="link-card" style="--shadow-glow: 0 10px 30px rgba(56, 189, 248, 0.15)">
+				<div class="link-icon icon-cncf">
+					<!-- CNCF Icon (Globe/Grid) -->
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="10"></circle>
+						<line x1="2" y1="12" x2="22" y2="12"></line>
+						<path
+							d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+						</path>
+					</svg>
+				</div>
+				<div class="link-content">
+					<div class="link-title">CNCF Chapter Portal</div>
+					<div class="link-desc">RSVP for upcoming events & join as a member</div>
+				</div>
+				<div class="arrow-icon">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round">
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</div>
+			</a>
+
+			<!-- CNCF Slack Channel -->
+			<a href="https://slack.cncf.io" target="_blank" rel="noopener noreferrer" class="link-card"
+				style="--shadow-glow: 0 10px 30px rgba(255, 159, 67, 0.15)">
+				<div class="link-icon icon-slack">
+					<!-- Slack Icon -->
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+						<path
+							d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523 2.528 2.528 0 0 1-2.522-2.523 2.528 2.528 0 0 1 2.522-2.52h2.52v2.52zm1.261 0a2.528 2.528 0 0 1 2.52-2.52h5.043a2.528 2.528 0 0 1 2.522 2.52v5.042a2.528 2.528 0 0 1-2.522 2.52H8.823a2.528 2.528 0 0 1-2.52-2.52v-5.042zM8.823 5.043a2.528 2.528 0 0 1 2.52-2.522 2.528 2.528 0 0 1 2.522 2.522v2.52h-2.522a2.528 2.528 0 0 1-2.52-2.52zm0 1.261a2.528 2.528 0 0 1 2.52 2.52v5.043a2.528 2.528 0 0 1-2.52 2.522H3.781a2.528 2.528 0 0 1-2.522-2.522V8.824a2.528 2.528 0 0 1 2.522-2.52h5.042zm10.135 3.696a2.528 2.528 0 0 1 2.522-2.52 2.528 2.528 0 0 1 2.52 2.52v2.52h-2.52a2.528 2.528 0 0 1-2.522-2.52zm-1.262 0a2.528 2.528 0 0 1-2.52 2.52h-5.043a2.528 2.528 0 0 1-2.522-2.52V3.781a2.528 2.528 0 0 1 2.522-2.52h5.043a2.528 2.528 0 0 1 2.52 2.52v5.042zm-5.043 10.136a2.528 2.528 0 0 1-2.52 2.522 2.528 2.528 0 0 1-2.522-2.522v-2.52h2.522a2.528 2.528 0 0 1 2.52 2.52zm0-1.262a2.528 2.528 0 0 1-2.52-2.52v-5.043a2.528 2.528 0 0 1 2.52-2.522h5.043a2.528 2.528 0 0 1 2.52 2.522v5.043a2.528 2.528 0 0 1-2.52 2.52h-5.043z" />
+					</svg>
+				</div>
+				<div class="link-content">
+					<div class="link-title">CNCF Slack Channel</div>
+					<div class="link-desc">Chat with 500+ NYC members in #cloud-native-new-york</div>
+				</div>
+				<div class="arrow-icon">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round">
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</div>
+			</a>
+
+			<!-- Governance Draft -->
+			<a href="https://github.com/cloud-native-nyc/governance/blob/main/GOVERNANCE.md" target="_blank" rel="noopener noreferrer" class="link-card"
+				style="--shadow-glow: 0 10px 30px rgba(255, 255, 255, 0.06)">
+				<div class="link-icon icon-github">
+					<!-- GitHub Icon -->
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+						<path
+							d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+					</svg>
+				</div>
+				<div class="link-content">
+					<div class="link-title">Co-Create Our Governance</div>
+					<div class="link-desc">Read and contribute to our open-source draft on GitHub</div>
+				</div>
+				<div class="arrow-icon">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round">
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</div>
+			</a>
+
+			<!-- LinkedIn Official Page -->
+			<a href="https://www.linkedin.com/company/cloud-native-nyc" target="_blank" rel="noopener noreferrer" class="link-card"
+				style="--shadow-glow: 0 10px 30px rgba(10, 102, 194, 0.15)">
+				<div class="link-icon icon-linkedin">
+					<!-- LinkedIn Icon -->
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+						<path
+							d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+					</svg>
+				</div>
+				<div class="link-content">
+					<div class="link-title">Official LinkedIn</div>
+					<div class="link-desc">Stay updated on speakers, meetups, and job postings</div>
+				</div>
+				<div class="arrow-icon">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+						stroke-linecap="round" stroke-linejoin="round">
+						<line x1="5" y1="12" x2="19" y2="12"></line>
+						<polyline points="12 5 19 12 12 19"></polyline>
+					</svg>
+				</div>
+			</a>
+		</div>
+
+		<footer>
+			<p>Join the Cloud Native journey with us. Powered by <a href="https://ocgroups.dev/cncf/group/5pcu8cb"
+					target="_blank" rel="noopener noreferrer">Cloud Native NYC</a></p>
+		</footer>
+	</div>
+</body>
+
+</html>

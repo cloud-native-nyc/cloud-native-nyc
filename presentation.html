@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Building the Community Bridge - Cloud Native NYC</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+
+	<!-- Theme used fo-r syntax-r syntax highlighted code -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/monokai.min.css">
+
+	<!-- Google Fonts for premium typography -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+
+	<style>
+		:root {
+			--bg-primary: #0f172a;
+			--bg-secondary: #1e293b;
+			--bg-card: rgba(30, 41, 59, 0.7);
+			--border-card: rgba(255, 255, 255, 0.08);
+			--text-primary: #ffffff;
+			--text-secondary: #94a3b8;
+			--text-muted: #cbd5e1;
+
+			--accent-cyan: #38bdf8;
+			--accent-green: #00ff88;
+			--accent-orange: #ff9f43;
+
+			--shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
+		}
+
+		/* CSS variables prepared for Light Mode */
+		.light-theme {
+			--bg-primary: #f8fafc;
+			--bg-secondary: #f1f5f9;
+			--bg-card: rgba(255, 255, 255, 0.85);
+			--border-card: rgba(0, 0, 0, 0.08);
+			--text-primary: #0f172a;
+			--text-secondary: #475569;
+			--text-muted: #334155;
+
+			--accent-cyan: #0284c7;
+			--accent-green: #16a34a;
+			--accent-orange: #ea580c;
+
+			--shadow-premium: 0 10px 25px rgba(0, 0, 0, 0.05);
+		}
+
+		/* Custom Reveal.js Overrides */
+		.reveal {
+			font-family: 'Plus Jakarta Sans', sans-serif !important;
+			color: var(--text-primary) !important;
+		}
+
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal h4,
+		.reveal h5,
+		.reveal h6 {
+			font-family: 'Outfit', sans-serif !important;
+			font-weight: 800 !important;
+			text-transform: none !important;
+			letter-spacing: -0.02em !important;
+			color: var(--text-primary) !important;
+		}
+
+		/* Utility Classes */
+		.flex-center {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+		}
+
+		.glass-card {
+			background: var(--bg-card);
+			border: 1px solid var(--border-card);
+			border-radius: 20px;
+			padding: 24px;
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			box-shadow: var(--shadow-premium);
+			transition: all 0.3s ease;
+		}
+
+		.glass-card:hover {
+			border-color: rgba(255, 255, 255, 0.15);
+			transform: translateY(-2px);
+		}
+
+		/* Responsive elements */
+		.grid-cols-3 {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+			width: 100%;
+			margin-top: 30px;
+		}
+
+		.flex-row-responsive {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 40px;
+			width: 100%;
+		}
+
+		.qr-horizontal-row {
+			display: flex;
+			flex-direction: row;
+			align-items: stretch;
+			justify-content: center;
+			gap: 24px;
+			width: 100%;
+		}
+
+		.speaker-card {
+			text-align: center;
+			width: 250px;
+			background: rgba(255, 255, 255, 0.02);
+			padding: 30px 20px;
+			border-radius: 20px;
+			border: 1px solid rgba(255, 255, 255, 0.05);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+			transition: transform 0.3s ease, border-color 0.3s ease;
+		}
+
+		.speaker-card:hover {
+			transform: translateY(-5px);
+			border-color: rgba(255, 255, 255, 0.15);
+		}
+
+		/* Logo Dark Mode Prep */
+		.logo-badge {
+			background: white;
+			/* ensures light/dark contrast */
+			padding: 12px 24px;
+			border-radius: 16px;
+			box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+			transition: transform 0.3s ease;
+		}
+
+		.logo-badge:hover {
+			transform: scale(1.03);
+		}
+
+		.logo-badge img {
+			max-height: 80px;
+			width: auto;
+			object-fit: contain;
+		}
+
+		/* Responsive QR Codes */
+		.qr-wrapper {
+			background: white;
+			padding: 10px;
+			border-radius: 12px;
+			width: 130px;
+			height: 130px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			border: 2px solid var(--accent-cyan);
+		}
+
+		.qr-wrapper img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			margin: 0 !important;
+		}
+
+		/* Horizontal ladder styling */
+		.ladder-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 16px;
+			width: 100%;
+			margin-top: 25px;
+		}
+
+		/* Squircle avatar styling for speakers */
+		.squircle-avatar {
+			width: 170px;
+			height: 170px;
+			border-radius: 40px;
+			object-fit: cover;
+			box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+			transition: transform 0.3s ease, border-color 0.3s ease;
+		}
+
+		/* Media Queries for slide content responsiveness */
+		@media (max-width: 768px) {
+			.grid-cols-3,
+			.ladder-grid {
+				grid-template-columns: 1fr !important;
+				gap: 12px !important;
+			}
+
+			.flex-row-responsive {
+				flex-direction: column !important;
+				gap: 20px !important;
+			}
+
+			.speaker-card {
+				width: 100% !important;
+				max-width: 280px;
+			}
+
+			.logo-badge img {
+				max-height: 60px !important;
+			}
+
+			.reveal h2 {
+				font-size: 1.4em !important;
+			}
+
+			.reveal h3 {
+				font-size: 0.9em !important;
+			}
+
+			.hide-mobile {
+				display: none !important;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Slide 1: Welcome & QRs -->
+			<section data-background-gradient="linear-gradient(to bottom, #0f172a, #1e293b)">
+				<div class="flex-center">
+					<div class="logo-badge" style="margin-bottom: 15px; padding: 12px 24px; border-radius: 16px;">
+						<img src="assets/images/logo.jpg" alt="Cloud Native NYC Logo"
+							style="max-height: 90px; width: auto; object-fit: contain;">
+					</div>
+					<h2
+						style="font-size: 1.6em; margin: 0; font-weight: 800; background: linear-gradient(135deg, #ffffff 30%, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+						Building the Community Bridge</h2>
+					<h3
+						style="font-size: 0.95em; color: var(--accent-cyan); margin: 6px 0 20px 0; text-transform: uppercase; letter-spacing: 2px;">
+						Cloud Native NYC Chapter</h3>
+					<p style="margin: 0;"><small style="color: var(--text-secondary); font-size: 0.55em;">Hosted by: <strong
+								style="color: #ffffff;">Scott Rigby</strong> & <strong
+								style="color: #ffffff;">Christopher Tineo</strong></small></p>
+
+					<div class="glass-card qr-horizontal-row"
+						style="margin-top: 25px; gap: 20px; padding: 20px; max-width: 850px; width: 100%;">
+						<!-- QR 1: CNCF Portal -->
+						<div
+							style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+							<p
+								style="margin: 0 0 10px 0; font-size: 0.5em; color: var(--accent-cyan); font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">
+								Join Chapter</p>
+							<div class="qr-wrapper"
+								style="width: 100px; height: 100px; border-color: var(--accent-cyan); padding: 5px;">
+								<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://ocgroups.dev/cncf/group/5pcu8cb"
+									alt="QR Code for CNCF Chapter">
+							</div>
+							<p
+								style="margin: 6px 0 0 0; font-size: 0.4em; color: var(--text-secondary); font-weight: 500;">
+								ocgroups.dev</p>
+						</div>
+
+						<!-- Vertical Divider -->
+						<div
+							style="width: 1px; background: rgba(255,255,255,0.08); align-self: stretch; margin: 8px 0;">
+						</div>
+
+						<!-- QR 2: Governance -->
+						<div
+							style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+							<p
+								style="margin: 0 0 10px 0; font-size: 0.5em; color: var(--accent-green); font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">
+								Governance</p>
+							<div class="qr-wrapper"
+								style="width: 100px; height: 100px; border-color: var(--accent-green); padding: 5px;">
+								<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://github.com/cloud-native-nyc/governance/blob/main/GOVERNANCE.md"
+									alt="QR Code for Governance Draft">
+							</div>
+							<p
+								style="margin: 6px 0 0 0; font-size: 0.4em; color: var(--text-secondary); font-weight: 500;">
+								GOVERNANCE.md</p>
+						</div>
+
+						<!-- Vertical Divider -->
+						<div
+							style="width: 1px; background: rgba(255,255,255,0.08); align-self: stretch; margin: 8px 0;">
+						</div>
+
+						<!-- QR 3: LinkedIn -->
+						<div
+							style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+							<p
+								style="margin: 0 0 10px 0; font-size: 0.5em; color: var(--accent-orange); font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">
+								LinkedIn</p>
+							<div class="qr-wrapper"
+								style="width: 100px; height: 100px; border-color: var(--accent-orange); padding: 5px;">
+								<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.linkedin.com/company/cloud-native-nyc"
+									alt="QR Code for LinkedIn">
+							</div>
+							<p
+								style="margin: 6px 0 0 0; font-size: 0.4em; color: var(--text-secondary); font-weight: 500;">
+								@cloud-native-nyc</p>
+						</div>
+					</div>
+				</div>
+				<aside class="notes">
+					Welcome everyone to KCD New York 2026! Introduction of Scott and Christopher.
+					Opening Hook: "Community isn't just about writing code; it's a strategic career accelerator. We are
+					here to talk about your Return on Investment for participating in Cloud Native NYC."
+					Prompt the audience to scan the QR code right now so they have the governance draft on their phones
+					and join the Slack channel.
+				</aside>
+			</section>
+
+			<!-- Slide 2: Hosts -->
+			<section data-background-gradient="linear-gradient(to bottom, #0b0f19, #111827)">
+				<div class="flex-center">
+					<h2 style="font-weight: 800; color: #ffffff; margin-bottom: 25px; font-size: 1.6em;">Meet Your Hosts 🎙️</h2>
+					<div class="flex-row-responsive" style="gap: 30px;">
+						<div class="speaker-card" style="padding: 30px 20px; width: 280px; border-radius: 28px;">
+							<div style="position: relative; display: inline-block;">
+								<img src="assets/images/scott.jpg" alt="Scott Rigby" class="squircle-avatar"
+									style="border: 4px solid var(--accent-cyan);">
+							</div>
+							<h3 style="font-size: 1.2em; margin: 15px 0 6px 0; color: #ffffff; font-weight: 700;">Scott Rigby</h3>
+							<p style="font-size: 0.65em; color: var(--text-secondary); margin: 4px 0 8px 0; line-height: 1.3;">
+								Cloud Native Ambassador</p>
+							<p
+								style="font-size: 0.55em; color: var(--accent-cyan); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0;">
+								Helm</p>
+						</div>
+						<div class="speaker-card" style="padding: 30px 20px; width: 280px; border-radius: 28px;">
+							<div style="position: relative; display: inline-block;">
+								<img src="assets/images/christopher.jpg" alt="Christopher Tineo" class="squircle-avatar"
+									style="border: 4px solid var(--accent-green);">
+							</div>
+							<h3 style="font-size: 1.2em; margin: 15px 0 6px 0; color: #ffffff; font-weight: 700;">Christopher Tineo</h3>
+							<p style="font-size: 0.65em; color: var(--text-secondary); margin: 4px 0 8px 0; line-height: 1.3;">
+								Software Engineer</p>
+							<p
+								style="font-size: 0.55em; color: var(--accent-green); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0;">
+								Game Plan Tech</p>
+						</div>
+					</div>
+				</div>
+				<aside class="notes">
+					Introduce yourselves briefly. Scott is a Helm maintainer and CNCF ambassador. Christopher is a
+					software engineer. Both are active organizers of the Cloud Native NYC chapter.
+				</aside>
+			</section>
+
+			<!-- Slide 3: ROI -->
+			<section data-background-gradient="linear-gradient(to bottom, #0f172a, #1e293b)">
+				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">The Win-Win: What's Your ROI? 🤝</h2>
+				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 20px;">A thriving ecosystem requires mutual value.</p>
+
+				<div class="grid-cols-3" style="font-size: 0.5em; gap: 16px;">
+					<div class="glass-card fragment" data-fragment-index="1" style="padding: 20px 15px; border-radius: 16px;">
+						<h3 style="color: var(--accent-orange); margin-top:0; font-size: 1.25em;">Engineers</h3>
+						<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0;">
+						<ul style="padding-left: 15px; line-height: 1.5; color: var(--text-muted); margin: 0;">
+							<li style="margin-bottom: 6px;">Hands-on skill building</li>
+							<li style="margin-bottom: 6px;">Career & hiring network</li>
+							<li>CNCF discounts & resources</li>
+						</ul>
+					</div>
+					<div class="glass-card fragment" data-fragment-index="2" style="padding: 20px 15px; border-radius: 16px;">
+						<h3 style="color: var(--accent-cyan); margin-top:0; font-size: 1.25em;">Tech Leaders</h3>
+						<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0;">
+						<ul style="padding-left: 15px; line-height: 1.5; color: var(--text-muted); margin: 0;">
+							<li style="margin-bottom: 6px;">Speaking & leadership skills</li>
+							<li style="margin-bottom: 6px;">Peer & industry recognition</li>
+							<li>Connect with CNCF maintainers</li>
+						</ul>
+					</div>
+					<div class="glass-card fragment" data-fragment-index="3" style="padding: 20px 15px; border-radius: 16px;">
+						<h3 style="color: var(--accent-green); margin-top:0; font-size: 1.25em;">Sponsors</h3>
+						<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0;">
+						<ul style="padding-left: 15px; line-height: 1.5; color: var(--text-muted); margin: 0;">
+							<li style="margin-bottom: 6px;">NYC Brand & talent visibility</li>
+							<li style="margin-bottom: 6px;">Direct pipeline to local talent</li>
+							<li>Pitch end-user stories to community</li>
+						</ul>
+					</div>
+				</div>
+				<aside class="notes">
+					Map the audience's pain points.
+					Interaction prompt: "By show of hands, who here is looking to hire talent? Who is looking to give a
+					keynote but needs a platform?"
+					Emphasize that the NYC chapter is engineered to fulfill these exact needs.
+				</aside>
+			</section>
+
+			<!-- Slide 4: Contributor Ladder (Horizontal) -->
+			<section data-background-gradient="linear-gradient(to bottom, #0f172a, #1e293b)">
+				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">The Contributor Ladder 🪜</h2>
+				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 15px;">A transparent, predictable path to leadership & rewards.</p>
+
+				<div class="ladder-grid" style="font-size: 0.5em;">
+					<!-- Attendee -->
+					<div class="glass-card fragment" data-fragment-index="1"
+						style="padding: 15px 12px; border-top: 4px solid #aaa; border-left: none; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 160px; border-radius: 16px;">
+						<div>
+							<strong style="font-size: 1.15em; color: #ffffff;">Attendee</strong>
+							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Participate</p>
+						</div>
+						<div style="font-size: 0.85em; color: var(--text-muted); line-height: 1.4;">
+							Learn, network, respect CoC.
+						</div>
+					</div>
+
+					<!-- Volunteer -->
+					<div class="glass-card fragment" data-fragment-index="2"
+						style="padding: 15px 12px; border-top: 4px solid var(--accent-cyan); border-left: none; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 160px; border-radius: 16px;">
+						<div>
+							<strong style="font-size: 1.15em; color: var(--accent-cyan);">Volunteer</strong>
+							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">3mo / 4 events</p>
+						</div>
+						<div style="font-size: 0.85em; color: var(--text-muted); line-height: 1.4;">
+							🎁 Mentorship, core networking, path to Lead.
+						</div>
+					</div>
+
+					<!-- Team Lead -->
+					<div class="glass-card fragment" data-fragment-index="3"
+						style="padding: 15px 12px; border-top: 4px solid var(--accent-orange); border-left: none; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 160px; border-radius: 16px;">
+						<div>
+							<strong style="font-size: 1.15em; color: var(--accent-orange);">Team Lead</strong>
+							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Manage area (1 yr)</p>
+						</div>
+						<div style="font-size: 0.85em; color: var(--text-muted); line-height: 1.4;">
+							🎁 Public speaking & local community visibility.
+						</div>
+					</div>
+
+					<!-- Organizer -->
+					<div class="glass-card fragment" data-fragment-index="4"
+						style="padding: 15px 12px; border-top: 4px solid var(--accent-green); border-left: none; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 160px; border-radius: 16px;">
+						<div>
+							<strong style="font-size: 1.15em; color: var(--accent-green);">Organizer</strong>
+							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Active support (6mo)</p>
+						</div>
+						<div style="font-size: 0.85em; color: var(--text-muted); line-height: 1.4;">
+							🎁 Voting voice, Credly badges, & CNCF conference perks.
+						</div>
+					</div>
+				</div>
+				<aside class="notes">
+					Explain that we fixed the broken barriers to entry. The path is now highly achievable given our
+					aggressive monthly cadence (over 500 members strong!).
+					Highlight the concrete perks CNCF provides (swag, discounts, vouchers) and how they flow down this
+					ladder.
+				</aside>
+			</section>
+
+			<!-- Slide 5: Governance -->
+			<section data-background-gradient="linear-gradient(to bottom, #0f172a, #1e293b)">
+				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">Co-Create Our Governance 🛠️</h2>
+				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 10px;">This governance model is an <strong>Open Source Draft</strong>.</p>
+
+				<div class="flex-row-responsive" style="align-items: stretch; gap: 24px; margin-top: 20px;">
+					<!-- Left: Mission -->
+					<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: left; font-size: 0.55em;">
+						<p style="color: var(--accent-cyan); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0; font-size: 0.85em;">Our Mission</p>
+						<h3 style="font-size: 1.45em; line-height: 1.35; margin: 0; color: #ffffff; font-weight: 800;">
+							Decentralize power & bring back the NYC Cloud Native Community.
+						</h3>
+						<p style="color: var(--text-secondary); font-size: 0.85em; margin-top: 12px; line-height: 1.4;">
+							We manage decisions transparently via GitHub to enforce open stewardship.
+						</p>
+					</div>
+
+					<!-- Right: Guardrails -->
+					<div class="glass-card" style="flex: 1.2; text-align: left; font-size: 0.5em; padding: 20px 24px; border-radius: 16px; display: flex; flex-direction: column; justify-content: center;">
+						<h4 style="color: var(--accent-orange); margin: 0 0 10px 0; font-size: 1.25em; font-weight: 700;">Vendor Neutrality Guardrail</h4>
+						<ul style="margin: 0 0 12px 0; padding-left: 20px; line-height: 1.5; color: var(--text-muted);">
+							<li style="margin-bottom: 6px;">Organizers elected by simple majority.</li>
+							<li style="margin-bottom: 6px;">Majority vote <strong style="color: var(--accent-cyan);">must include</strong> an organizer from another company.</li>
+							<li>No single company can hold >50% of organizer seats.</li>
+						</ul>
+						<p style="margin: 0; color: var(--accent-orange); font-weight: bold; text-align: center; font-size: 0.9em;">
+							👉 Open an issue on GitHub to debate rules live!
+						</p>
+					</div>
+				</div>
+				<aside class="notes">
+					Open the floor.
+					Explain the new "Anti-Capture Guardrail" (50% vendor neutrality rule and voting requirements).
+					Ask the audience: "Do these incentives feel right to you? What is missing?"
+				</aside>
+			</section>
+
+			<!-- Slide 6: Next Event -->
+			<section data-background-color="#0b0f19">
+				<div class="flex-center">
+					<h2 style="color: #ffffff; font-weight: 800; margin-bottom: 5px; font-size: 1.6em;">Next Event: June 26th 🗓️</h2>
+					<h3
+						style="color: var(--accent-orange); font-size: 0.95em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
+						OTel Night NYC @ NYT Building</h3>
+
+					<div class="flex-row-responsive" style="gap: 30px; max-width: 800px; width: 100%;">
+						<div
+							style="text-align: left; font-size: 0.55em; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); flex: 1.3; display: flex; flex-direction: column; justify-content: center;">
+							<p
+								style="color: var(--accent-orange); margin-top: 0; margin-bottom: 12px; font-weight: bold; font-size: 1.15em;">
+								Open Volunteer Roles:</p>
+							<ul style="margin: 0; padding-left: 20px; line-height: 1.5; color: var(--text-muted);">
+								<li style="margin-bottom: 6px;"><strong>Event Ops:</strong> Venue setup, registration, & logistics.</li>
+								<li style="margin-bottom: 6px;"><strong>Comms Team:</strong> Social posts, photos, & live coverage.</li>
+								<li><strong>Sponsorships:</strong> Secure Q3/Q4 corporate venues.</li>
+							</ul>
+						</div>
+						<div class="glass-card" style="padding: 15px; display: flex; align-items: center; justify-content: center;">
+							<div class="qr-wrapper" style="border-color: var(--accent-orange); width: 140px; height: 140px;">
+								<img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://ocgroups.dev/cncf/group/5pcu8cb/event/pv5u8yj"
+									alt="QR Code for OTel Night NYC Event">
+							</div>
+						</div>
+					</div>
+					<p style="margin-top: 25px; color: var(--text-secondary); font-size: 0.6em;">Scan to
+						<strong style="color: var(--accent-orange);">RSVP</strong> & join <strong
+							style="color: #ffffff;">#cloud-native-new-york</strong> on Slack to volunteer!
+					</p>
+				</div>
+				<aside class="notes">
+					Closing call to action. We have a massive event coming up at the New York Times Building on June
+					26th at 6:00 PM.
+					Do not let people leave the room without trying to fill the 4 Event Ops and 1 Comms volunteer slots
+					right there in person.
+				</aside>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			width: 1280,
+			height: 720,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2.0,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
