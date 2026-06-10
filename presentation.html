@@ -75,6 +75,12 @@
 			color: var(--text-primary) !important;
 		}
 
+		.reveal h2 {
+			font-size: 1.35em !important;
+			margin-top: 0 !important;
+			margin-bottom: 10px !important;
+		}
+
 		/* Utility Classes */
 		.flex-center {
 			display: flex;
@@ -210,6 +216,7 @@
 
 		/* Media Queries for slide content responsiveness */
 		@media (max-width: 768px) {
+
 			.grid-cols-3,
 			.ladder-grid {
 				grid-template-columns: 1fr !important;
@@ -261,22 +268,22 @@
 					<h3
 						style="font-size: 0.95em; color: var(--accent-cyan); margin: 6px 0 20px 0; text-transform: uppercase; letter-spacing: 2px;">
 						Cloud Native NYC Chapter</h3>
-					<p style="margin: 0;"><small style="color: var(--text-secondary); font-size: 0.55em;">Hosted by: <strong
-								style="color: #ffffff;">Scott Rigby</strong> & <strong
+					<p style="margin: 0;"><small style="color: var(--text-secondary); font-size: 0.55em;">Hosted by:
+							<strong style="color: #ffffff;">Scott Rigby</strong> & <strong
 								style="color: #ffffff;">Christopher Tineo</strong></small></p>
 
 					<div class="glass-card qr-horizontal-row"
 						style="margin-top: 25px; gap: 20px; padding: 20px; max-width: 850px; width: 100%;">
-						<!-- QR 1: CNCF Portal -->
+						<!-- QR 1: Join the Community -->
 						<div
 							style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
 							<p
 								style="margin: 0 0 10px 0; font-size: 0.5em; color: var(--accent-cyan); font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">
-								Join Chapter</p>
+								Join the Community</p>
 							<div class="qr-wrapper"
 								style="width: 100px; height: 100px; border-color: var(--accent-cyan); padding: 5px;">
 								<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://ocgroups.dev/cncf/group/5pcu8cb"
-									alt="QR Code for CNCF Chapter">
+									alt="QR Code to Join Cloud Native NYC Chapter">
 							</div>
 							<p
 								style="margin: 6px 0 0 0; font-size: 0.4em; color: var(--text-secondary); font-weight: 500;">
@@ -288,20 +295,20 @@
 							style="width: 1px; background: rgba(255,255,255,0.08); align-self: stretch; margin: 8px 0;">
 						</div>
 
-						<!-- QR 2: Governance -->
+						<!-- QR 2: CNCF Conduct -->
 						<div
 							style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
 							<p
 								style="margin: 0 0 10px 0; font-size: 0.5em; color: var(--accent-green); font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">
-								Governance</p>
+								CNCF CoC</p>
 							<div class="qr-wrapper"
 								style="width: 100px; height: 100px; border-color: var(--accent-green); padding: 5px;">
-								<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://github.com/cloud-native-nyc/governance/blob/main/GOVERNANCE.md"
-									alt="QR Code for Governance Draft">
+								<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.cncf.io/conduct/"
+									alt="QR Code for CNCF Code of Conduct">
 							</div>
 							<p
 								style="margin: 6px 0 0 0; font-size: 0.4em; color: var(--text-secondary); font-weight: 500;">
-								GOVERNANCE.md</p>
+								cncf.io/conduct</p>
 						</div>
 
 						<!-- Vertical Divider -->
@@ -330,23 +337,27 @@
 					Welcome everyone to KCD New York 2026! Introduction of Scott and Christopher.
 					Opening Hook: "Community isn't just about writing code; it's a strategic career accelerator. We are
 					here to talk about your Return on Investment for participating in Cloud Native NYC."
-					Prompt the audience to scan the QR code right now so they have the governance draft on their phones
-					and join the Slack channel.
+					Prompt the audience to scan the QR codes right now: join the chapter at ocgroups.dev, review the
+					CNCF
+					Code of Conduct, and connect with us on LinkedIn.
 				</aside>
 			</section>
 
 			<!-- Slide 2: Hosts -->
 			<section data-background-gradient="linear-gradient(to bottom, #0b0f19, #111827)">
 				<div class="flex-center">
-					<h2 style="font-weight: 800; color: #ffffff; margin-bottom: 25px; font-size: 1.6em;">Meet Your Hosts 🎙️</h2>
+					<h2 style="font-weight: 800; color: #ffffff; margin-bottom: 25px; font-size: 1.6em;">Meet Your Hosts
+						🎙️</h2>
 					<div class="flex-row-responsive" style="gap: 30px;">
 						<div class="speaker-card" style="padding: 30px 20px; width: 280px; border-radius: 28px;">
 							<div style="position: relative; display: inline-block;">
 								<img src="assets/images/scott.jpg" alt="Scott Rigby" class="squircle-avatar"
 									style="border: 4px solid var(--accent-cyan);">
 							</div>
-							<h3 style="font-size: 1.2em; margin: 15px 0 6px 0; color: #ffffff; font-weight: 700;">Scott Rigby</h3>
-							<p style="font-size: 0.65em; color: var(--text-secondary); margin: 4px 0 8px 0; line-height: 1.3;">
+							<h3 style="font-size: 1.2em; margin: 15px 0 6px 0; color: #ffffff; font-weight: 700;">Scott
+								Rigby</h3>
+							<p
+								style="font-size: 0.65em; color: var(--text-secondary); margin: 4px 0 8px 0; line-height: 1.3;">
 								Cloud Native Ambassador</p>
 							<p
 								style="font-size: 0.55em; color: var(--accent-cyan); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0;">
@@ -357,8 +368,10 @@
 								<img src="assets/images/christopher.jpg" alt="Christopher Tineo" class="squircle-avatar"
 									style="border: 4px solid var(--accent-green);">
 							</div>
-							<h3 style="font-size: 1.2em; margin: 15px 0 6px 0; color: #ffffff; font-weight: 700;">Christopher Tineo</h3>
-							<p style="font-size: 0.65em; color: var(--text-secondary); margin: 4px 0 8px 0; line-height: 1.3;">
+							<h3 style="font-size: 1.2em; margin: 15px 0 6px 0; color: #ffffff; font-weight: 700;">
+								Christopher Tineo</h3>
+							<p
+								style="font-size: 0.65em; color: var(--text-secondary); margin: 4px 0 8px 0; line-height: 1.3;">
 								Software Engineer</p>
 							<p
 								style="font-size: 0.55em; color: var(--accent-green); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0;">
@@ -374,11 +387,14 @@
 
 			<!-- Slide 3: ROI -->
 			<section data-background-gradient="linear-gradient(to bottom, #0f172a, #1e293b)">
-				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">The Win-Win: What's Your ROI? 🤝</h2>
-				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 20px;">A thriving ecosystem requires mutual value.</p>
+				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">The Win-Win: What's
+					Your ROI? 🤝</h2>
+				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 20px;">A thriving ecosystem
+					requires mutual value.</p>
 
 				<div class="grid-cols-3" style="font-size: 0.5em; gap: 16px;">
-					<div class="glass-card fragment" data-fragment-index="1" style="padding: 20px 15px; border-radius: 16px;">
+					<div class="glass-card fragment" data-fragment-index="1"
+						style="padding: 20px 15px; border-radius: 16px;">
 						<h3 style="color: var(--accent-orange); margin-top:0; font-size: 1.25em;">Engineers</h3>
 						<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0;">
 						<ul style="padding-left: 15px; line-height: 1.5; color: var(--text-muted); margin: 0;">
@@ -387,7 +403,8 @@
 							<li>CNCF discounts & resources</li>
 						</ul>
 					</div>
-					<div class="glass-card fragment" data-fragment-index="2" style="padding: 20px 15px; border-radius: 16px;">
+					<div class="glass-card fragment" data-fragment-index="2"
+						style="padding: 20px 15px; border-radius: 16px;">
 						<h3 style="color: var(--accent-cyan); margin-top:0; font-size: 1.25em;">Tech Leaders</h3>
 						<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0;">
 						<ul style="padding-left: 15px; line-height: 1.5; color: var(--text-muted); margin: 0;">
@@ -396,7 +413,8 @@
 							<li>Connect with CNCF maintainers</li>
 						</ul>
 					</div>
-					<div class="glass-card fragment" data-fragment-index="3" style="padding: 20px 15px; border-radius: 16px;">
+					<div class="glass-card fragment" data-fragment-index="3"
+						style="padding: 20px 15px; border-radius: 16px;">
 						<h3 style="color: var(--accent-green); margin-top:0; font-size: 1.25em;">Sponsors</h3>
 						<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 10px 0;">
 						<ul style="padding-left: 15px; line-height: 1.5; color: var(--text-muted); margin: 0;">
@@ -416,8 +434,10 @@
 
 			<!-- Slide 4: Contributor Ladder (Horizontal) -->
 			<section data-background-gradient="linear-gradient(to bottom, #0f172a, #1e293b)">
-				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">The Contributor Ladder 🪜</h2>
-				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 15px;">A transparent, predictable path to leadership & rewards.</p>
+				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">The Contributor
+					Ladder 🪜</h2>
+				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 15px;">A transparent,
+					predictable path to leadership & rewards.</p>
 
 				<div class="ladder-grid" style="font-size: 0.5em;">
 					<!-- Attendee -->
@@ -425,7 +445,8 @@
 						style="padding: 15px 12px; border-top: 4px solid #aaa; border-left: none; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 160px; border-radius: 16px;">
 						<div>
 							<strong style="font-size: 1.15em; color: #ffffff;">Attendee</strong>
-							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Participate</p>
+							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Participate
+							</p>
 						</div>
 						<div style="font-size: 0.85em; color: var(--text-muted); line-height: 1.4;">
 							Learn, network, respect CoC.
@@ -437,7 +458,8 @@
 						style="padding: 15px 12px; border-top: 4px solid var(--accent-cyan); border-left: none; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 160px; border-radius: 16px;">
 						<div>
 							<strong style="font-size: 1.15em; color: var(--accent-cyan);">Volunteer</strong>
-							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">3mo / 4 events</p>
+							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Consistent
+								participation</p>
 						</div>
 						<div style="font-size: 0.85em; color: var(--text-muted); line-height: 1.4;">
 							🎁 Mentorship, core networking, path to Lead.
@@ -449,7 +471,8 @@
 						style="padding: 15px 12px; border-top: 4px solid var(--accent-orange); border-left: none; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 160px; border-radius: 16px;">
 						<div>
 							<strong style="font-size: 1.15em; color: var(--accent-orange);">Team Lead</strong>
-							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Manage area (1 yr)</p>
+							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Manage area
+							</p>
 						</div>
 						<div style="font-size: 0.85em; color: var(--text-muted); line-height: 1.4;">
 							🎁 Public speaking & local community visibility.
@@ -461,7 +484,8 @@
 						style="padding: 15px 12px; border-top: 4px solid var(--accent-green); border-left: none; text-align: left; display: flex; flex-direction: column; justify-content: space-between; height: 160px; border-radius: 16px;">
 						<div>
 							<strong style="font-size: 1.15em; color: var(--accent-green);">Organizer</strong>
-							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Active support (6mo)</p>
+							<p style="font-size: 0.85em; color: var(--text-secondary); margin: 4px 0 0 0;">Active
+								support</p>
 						</div>
 						<div style="font-size: 0.85em; color: var(--text-muted); line-height: 1.4;">
 							🎁 Voting voice, Credly badges, & CNCF conference perks.
@@ -476,15 +500,485 @@
 				</aside>
 			</section>
 
+			<!-- Slide 4.5: How to Apply (Volunteer & Organizer) -->
+			<section
+				data-background-gradient="radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 60%, #020617 100%)">
+				<style>
+					.apply-container {
+						max-width: 1000px;
+						margin: 0 auto;
+						padding: 10px;
+						font-family: 'Outfit', 'Inter', sans-serif;
+					}
+
+					.apply-header {
+						text-align: center;
+						margin-bottom: 15px;
+						position: relative;
+					}
+
+					.apply-header::before {
+						content: '';
+						position: absolute;
+						top: -30px;
+						left: 50%;
+						transform: translateX(-50%);
+						width: 120px;
+						height: 120px;
+						background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+						z-index: -1;
+					}
+
+					.apply-subtitle {
+						font-size: 0.35em;
+						color: var(--accent-cyan);
+						font-weight: 800;
+						text-transform: uppercase;
+						letter-spacing: 4px;
+						display: inline-block;
+						padding: 3px 10px;
+						border: 1px solid rgba(56, 189, 248, 0.2);
+						border-radius: 20px;
+						margin-bottom: 6px;
+						background: rgba(56, 189, 248, 0.03);
+					}
+
+					.apply-title {
+						font-weight: 900;
+						color: var(--text-primary);
+						font-size: 1.15em !important;
+						margin: 0;
+						letter-spacing: -0.5px;
+					}
+
+					.apply-link {
+						color: var(--text-secondary);
+						font-size: 0.4em;
+						margin: 4px 0 0 0;
+						display: block;
+						text-decoration: none;
+					}
+
+					.apply-link a {
+						color: var(--accent-cyan);
+						text-decoration: none;
+						border-bottom: 1px solid transparent;
+					}
+
+					.apply-link a:hover {
+						border-color: var(--accent-cyan);
+					}
+
+					.cards-grid {
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+						gap: 15px;
+						margin-top: 10px;
+					}
+
+					.apply-card {
+						text-align: left;
+						background: var(--bg-card);
+						backdrop-filter: blur(12px);
+						border-radius: 16px;
+						padding: 18px;
+						border: 1px solid var(--border-card);
+						position: relative;
+						overflow: hidden;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						box-shadow: var(--shadow-premium);
+						transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+					}
+
+					.apply-card:hover {
+						transform: translateY(-4px);
+					}
+
+					.apply-card.volunteer {
+						border-top: 3px solid var(--accent-cyan);
+					}
+
+					.apply-card.volunteer:hover {
+						box-shadow: 0 10px 25px rgba(56, 189, 248, 0.1), var(--shadow-premium);
+					}
+
+					.apply-card.volunteer .card-glow {
+						background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.1) 0%, transparent 60%);
+					}
+
+					.apply-card.organizer {
+						border-top: 3px solid var(--accent-green);
+					}
+
+					.apply-card.organizer:hover {
+						box-shadow: 0 10px 25px rgba(0, 255, 136, 0.1), var(--shadow-premium);
+					}
+
+					.apply-card.organizer .card-glow {
+						background: radial-gradient(circle at 100% 0%, rgba(0, 255, 136, 0.1) 0%, transparent 60%);
+					}
+
+					.apply-card.benefits {
+						border-top: 3px solid var(--accent-orange);
+					}
+
+					.apply-card.benefits:hover {
+						box-shadow: 0 10px 25px rgba(255, 159, 67, 0.1), var(--shadow-premium);
+					}
+
+					.apply-card.benefits .card-glow {
+						background: radial-gradient(circle at 100% 0%, rgba(255, 159, 67, 0.1) 0%, transparent 60%);
+					}
+
+					.card-glow {
+						position: absolute;
+						top: 0;
+						right: 0;
+						width: 100px;
+						height: 100px;
+						z-index: 0;
+						pointer-events: none;
+					}
+
+					.card-content {
+						position: relative;
+						z-index: 1;
+					}
+
+					.card-header {
+						display: flex;
+						align-items: center;
+						gap: 8px;
+						margin-bottom: 10px;
+						border-bottom: 1px solid var(--border-card);
+						padding-bottom: 8px;
+					}
+
+					.card-num {
+						width: 28px;
+						height: 28px;
+						border-radius: 6px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-size: 0.7em;
+						font-weight: 900;
+					}
+
+					.apply-card.volunteer .card-num {
+						background: rgba(56, 189, 248, 0.08);
+						color: var(--accent-cyan);
+						border: 1px solid rgba(56, 189, 248, 0.15);
+					}
+
+					.apply-card.organizer .card-num {
+						background: rgba(0, 255, 136, 0.08);
+						color: var(--accent-green);
+						border: 1px solid rgba(0, 255, 136, 0.15);
+					}
+
+					.apply-card.benefits .card-num {
+						background: rgba(255, 159, 67, 0.08);
+						color: var(--accent-orange);
+						border: 1px solid rgba(255, 159, 67, 0.15);
+					}
+
+					.card-name {
+						margin: 0;
+						font-size: 0.6em;
+						font-weight: 800;
+						letter-spacing: 0.5px;
+						text-transform: uppercase;
+						color: var(--text-primary);
+					}
+
+					.card-list {
+						margin: 0;
+						padding: 0;
+						list-style: none;
+						font-size: 0.44em;
+						line-height: 1.4;
+						color: var(--text-muted);
+					}
+
+					.card-list li {
+						margin-bottom: 6px;
+						display: flex;
+						align-items: flex-start;
+						gap: 6px;
+					}
+
+					.card-list li span:first-child {
+						font-weight: bold;
+						margin-top: 1px;
+					}
+
+					.apply-card.volunteer .card-list li span:first-child {
+						color: var(--accent-cyan);
+					}
+
+					.apply-card.organizer .card-list li span:first-child {
+						color: var(--accent-green);
+					}
+
+					.apply-card.benefits .card-list li span:first-child {
+						color: var(--accent-orange);
+					}
+
+					.card-qr-section {
+						margin-top: 12px;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						border-top: 1px solid var(--border-card);
+						padding-top: 10px;
+						position: relative;
+						z-index: 1;
+					}
+
+					.qr-box {
+						width: 75px;
+						height: 75px;
+						margin-bottom: 4px;
+						background: #fff;
+						padding: 4px;
+						border-radius: 6px;
+						box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+						transition: transform 0.3s;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+
+					.apply-card:hover .qr-box {
+						transform: scale(1.05);
+					}
+
+					.qr-txt {
+						font-size: 0.35em;
+						color: var(--text-secondary);
+						font-weight: 600;
+						text-transform: uppercase;
+						letter-spacing: 0.5px;
+						margin: 0;
+						text-align: center;
+					}
+				</style>
+
+				<div class="apply-container">
+					<!-- Header -->
+					<div class="apply-header fragment fade-down">
+						<span class="apply-subtitle">Get Involved</span>
+						<h2 class="apply-title">How to Apply</h2>
+						<p class="apply-link">Based on <a href="https://github.com/cncf/communitygroups/#how-to-apply"
+								target="_blank">github.com/cncf/communitygroups</a></p>
+					</div>
+
+					<!-- Main Content: 3 columns -->
+					<div class="cards-grid">
+						<!-- Volunteer Card -->
+						<div class="apply-card volunteer fragment fade-right">
+							<div class="card-glow"></div>
+							<div class="card-content">
+								<div class="card-header">
+									<div class="card-num">01</div>
+									<h3 class="card-name">Volunteer</h3>
+								</div>
+								<ul class="card-list">
+									<li>
+										<span>✦</span>
+										<span>Express interest to any organizer</span>
+									</li>
+									<li>
+										<span>✦</span>
+										<span>Join meetups consistently over time</span>
+									</li>
+									<li>
+										<span>✦</span>
+										<span>Actively support multiple events</span>
+									</li>
+								</ul>
+							</div>
+							<div class="card-qr-section">
+								<div class="qr-box">
+									<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fgithub.com%2Fcncf%2Fcommunitygroups%2Fissues%2Fnew%3Ftemplate%3Dvolunteer-request.yaml"
+										alt="QR Code to Apply as Volunteer"
+										style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+								</div>
+								<p class="qr-txt">Scan to Apply</p>
+							</div>
+						</div>
+
+						<!-- Organizer Card -->
+						<div class="apply-card organizer fragment fade-up">
+							<div class="card-glow"></div>
+							<div class="card-content">
+								<div class="card-header">
+									<div class="card-num">02</div>
+									<h3 class="card-name">Organizer</h3>
+								</div>
+								<ul class="card-list">
+									<li>
+										<span>✦</span>
+										<span>Support community ops over a sustained period</span>
+									</li>
+									<li>
+										<span>✦</span>
+										<span>Be nominated by an existing organizer</span>
+									</li>
+									<li>
+										<span>✦</span>
+										<span>Approved by simple majority + employer vote</span>
+									</li>
+								</ul>
+							</div>
+							<div class="card-qr-section">
+								<div class="qr-box">
+									<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fgithub.com%2Fcncf%2Fcommunitygroups%2Fissues%2Fnew%3Ftemplate%3Dorganizer-request.yaml"
+										alt="QR Code to Apply as Organizer"
+										style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+								</div>
+								<p class="qr-txt">Scan to Apply</p>
+							</div>
+						</div>
+
+						<!-- Benefits Card -->
+						<div class="apply-card benefits fragment fade-left">
+							<div class="card-glow"></div>
+							<div class="card-content">
+								<div class="card-header">
+									<div class="card-num">03</div>
+									<h3 class="card-name">CNCF Benefits</h3>
+								</div>
+								<ul class="card-list">
+									<li>
+										<span>✦</span>
+										<span>Voting voice in local community choices</span>
+									</li>
+									<li>
+										<span>✦</span>
+										<span>Credly badges & event discounts</span>
+									</li>
+									<li>
+										<span>✦</span>
+										<span>Free certification vouchers & conference perks</span>
+									</li>
+								</ul>
+							</div>
+							<div class="card-qr-section">
+								<div class="qr-box">
+									<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fgithub.com%2Fcncf%2Fcommunitygroups%2F%23benefits-of-joining-the-cncf-community-groups-program"
+										alt="QR Code for CNCF Benefits"
+										style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+								</div>
+								<p class="qr-txt">View Perks</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<aside class="notes">
+					Explain the application process for volunteers and organizers.
+					Volunteers: express interest to any organizer, join consistently, support events.
+					Organizers: sustained support, nomination, majority vote with cross-employer guardrail.
+					Highlight the QR codes for applying and the benefits slide.
+				</aside>
+		</section>
+
+		<!-- Slide 4.6: CNCF Chapter Benefits -->
+		<section data-background-gradient="radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 60%, #020617 100%)">
+			<style>
+				.benefits-container { max-width: 1000px; margin: 0 auto; padding: 10px; font-family: 'Outfit', 'Inter', sans-serif; }
+				.benefits-header { text-align: center; margin-bottom: 20px; position: relative; }
+				.benefits-subtitle { font-size: 0.4em; color: var(--accent-orange); font-weight: 800; text-transform: uppercase; letter-spacing: 4px; display: inline-block; padding: 3px 10px; border: 1px solid rgba(255,159,67,0.2); border-radius: 20px; margin-bottom: 6px; background: rgba(255,159,67,0.03); }
+				.benefits-title { font-weight: 900; color: var(--text-primary); font-size: 1.4em; margin: 0; letter-spacing: -0.5px; }
+				
+				.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
+				
+				.benefit-card { text-align: left; background: var(--bg-card); backdrop-filter: blur(12px); border-radius: 16px; padding: 15px 18px; border: 1px solid var(--border-card); display: flex; align-items: flex-start; gap: 15px; box-shadow: var(--shadow-premium); transition: transform 0.3s ease; }
+				.benefit-card:hover { transform: translateY(-3px); }
+				
+				.benefit-icon { font-size: 1.3em; line-height: 1; margin-top: 2px; }
+				.benefit-info { flex: 1; }
+				.benefit-info h4 { margin: 0 0 5px 0; font-size: 0.7em; font-weight: 800; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px; }
+				.benefit-info p { margin: 0; font-size: 0.48em; line-height: 1.4; color: var(--text-muted); }
+				
+				.benefits-footer { margin-top: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-card); border-radius: 12px; padding: 10px 15px; text-align: center; }
+				.benefits-footer p { margin: 0; font-size: 0.4em; color: var(--text-secondary); line-height: 1.4; }
+			</style>
+			<div class="benefits-container">
+				<div class="benefits-header fragment fade-down">
+					<span class="benefits-subtitle">CNCF Rewards</span>
+					<h2 class="benefits-title">Chapter & Organizer Benefits</h2>
+				</div>
+				
+				<div class="benefits-grid">
+					<!-- Perk 1 -->
+					<div class="benefit-card fragment fade-right" style="border-left: 3px solid var(--accent-cyan);">
+						<div class="benefit-icon">🎓</div>
+						<div class="benefit-info">
+							<h4>Vouchers & Discounts</h4>
+							<p>Receive <strong>5 free certification vouchers</strong> annually for active chapters, plus a <strong>25% discount</strong> on Linux Foundation training exams (CKAD/KCNA).</p>
+						</div>
+					</div>
+					
+					<!-- Perk 2 -->
+					<div class="benefit-card fragment fade-left" style="border-left: 3px solid var(--accent-green);">
+						<div class="benefit-icon">👕</div>
+						<div class="benefit-info">
+							<h4>Swag & KubeCon Perks</h4>
+							<p>Claim a <strong>$100 store credit swag coupon</strong> after 2 successful in-person events, alongside discounts for global KubeCon conferences.</p>
+						</div>
+					</div>
+					
+					<!-- Perk 3 -->
+					<div class="benefit-card fragment fade-right" style="border-left: 3px solid var(--accent-orange);">
+						<div class="benefit-icon">🎖️</div>
+						<div class="benefit-info">
+							<h4>Credly Organizer Badges</h4>
+							<p>Earn official <strong>Credly recognition badges</strong> verifying your organizer status and validating your community impact in making Cloud Native ubiquitous.</p>
+						</div>
+					</div>
+					
+					<!-- Perk 4 -->
+					<div class="benefit-card fragment fade-left" style="border-left: 3px solid var(--accent-cyan);">
+						<div class="benefit-icon">💬</div>
+						<div class="benefit-info">
+							<h4>CNCF Support & Tools</h4>
+							<p>Gain access to exclusive organizer-only Slack channels, OCG platform hosting coverage, and direct support from regional CNCF staff/ambassadors.</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="benefits-footer fragment fade-up">
+					<p>✒️ <strong>Note:</strong> With over 200 chapters globally, CNCF cannot offer cash sponsorships outside of these structured program benefits, but continually adds new incentives.</p>
+				</div>
+			</div>
+			<aside class="notes">
+				Explain that CNCF offers substantial rewards to keep chapters active.
+				Point out the 5 free cert vouchers (requires 1 in-person event/quarter of >10 attendees).
+				Highlight the $100 swag coupon and training discounts.
+				Clarify that cash sponsorships aren't possible due to scale, but these tools/perks deliver high value.
+			</aside>
+		</section>
+
 			<!-- Slide 5: Governance -->
 			<section data-background-gradient="linear-gradient(to bottom, #0f172a, #1e293b)">
-				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">Co-Create Our Governance 🛠️</h2>
-				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 10px;">This governance model is an <strong>Open Source Draft</strong>.</p>
+				<h2 style="font-weight: 800; color: #ffffff; font-size: 1.6em; margin-bottom: 5px;">Co-Create Our
+					Governance 🛠️</h2>
+				<p style="color: var(--text-secondary); font-size: 0.75em; margin-bottom: 10px;">This governance model
+					is an <strong>Open Source Draft</strong>.</p>
 
 				<div class="flex-row-responsive" style="align-items: stretch; gap: 24px; margin-top: 20px;">
 					<!-- Left: Mission -->
-					<div style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: left; font-size: 0.55em;">
-						<p style="color: var(--accent-cyan); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0; font-size: 0.85em;">Our Mission</p>
+					<div
+						style="flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: left; font-size: 0.55em;">
+						<p
+							style="color: var(--accent-cyan); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0; font-size: 0.85em;">
+							Our Mission</p>
 						<h3 style="font-size: 1.45em; line-height: 1.35; margin: 0; color: #ffffff; font-weight: 800;">
 							Decentralize power & bring back the NYC Cloud Native Community.
 						</h3>
@@ -493,17 +987,36 @@
 						</p>
 					</div>
 
-					<!-- Right: Guardrails -->
-					<div class="glass-card" style="flex: 1.2; text-align: left; font-size: 0.5em; padding: 20px 24px; border-radius: 16px; display: flex; flex-direction: column; justify-content: center;">
-						<h4 style="color: var(--accent-orange); margin: 0 0 10px 0; font-size: 1.25em; font-weight: 700;">Vendor Neutrality Guardrail</h4>
-						<ul style="margin: 0 0 12px 0; padding-left: 20px; line-height: 1.5; color: var(--text-muted);">
-							<li style="margin-bottom: 6px;">Organizers elected by simple majority.</li>
-							<li style="margin-bottom: 6px;">Majority vote <strong style="color: var(--accent-cyan);">must include</strong> an organizer from another company.</li>
-							<li>No single company can hold >50% of organizer seats.</li>
-						</ul>
-						<p style="margin: 0; color: var(--accent-orange); font-weight: bold; text-align: center; font-size: 0.9em;">
-							👉 Open an issue on GitHub to debate rules live!
-						</p>
+					<!-- Right: Guardrails & QR Code -->
+					<div class="glass-card"
+						style="flex: 1.3; text-align: left; font-size: 0.5em; padding: 20px 24px; border-radius: 16px; display: flex; align-items: center; gap: 20px; justify-content: space-between;">
+						<div style="flex: 1.5;">
+							<h4
+								style="color: var(--accent-orange); margin: 0 0 10px 0; font-size: 1.25em; font-weight: 700;">
+								Vendor Neutrality Guardrail</h4>
+							<ul
+								style="margin: 0 0 12px 0; padding-left: 20px; line-height: 1.5; color: var(--text-muted);">
+								<li style="margin-bottom: 6px;">Organizers elected by simple majority.</li>
+								<li style="margin-bottom: 6px;">Majority vote <strong
+										style="color: var(--accent-cyan);">must include</strong> an organizer from
+									another
+									company.</li>
+								<li>No single company can hold >50% of organizer seats.</li>
+							</ul>
+						</div>
+						<div
+							style="flex: 0.8; display: flex; flex-direction: column; align-items: center; justify-content: center; border-left: 1px solid var(--border-card); padding-left: 20px;">
+							<div class="qr-wrapper"
+								style="border-color: var(--accent-cyan); width: 100px; height: 100px; padding: 5px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+								<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fgithub.com%2Fcloudcommunitylabs%2Fcloud-native-nyc%2Fblob%2Fmain%2Fdocs%2FGOVERNANCE.md"
+									alt="QR Code for Governance"
+									style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+							</div>
+							<p
+								style="margin: 8px 0 0 0; font-size: 0.8em; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; line-height: 1.2;">
+								Scan to Read Governance
+							</p>
+						</div>
 					</div>
 				</div>
 				<aside class="notes">
@@ -516,9 +1029,11 @@
 			<!-- Slide 6: Next Event -->
 			<section data-background-color="#0b0f19">
 				<div class="flex-center">
-					<h2 style="color: #ffffff; font-weight: 800; margin-bottom: 5px; font-size: 1.6em;">Next Event: June 26th 🗓️</h2>
+					<h2 style="color: #ffffff; font-weight: 800; margin-bottom: 5px; font-size: 1.6em;">Next Event: June
+						26th 🗓️</h2>
 					<h3
-						style="color: var(--accent-orange); font-size: 0.95em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px;">
+						style="color: var(--accent-orange); font-size: 0.95em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+						<img src="https://avatars.githubusercontent.com/u/49998002?s=280&v=4" alt="OpenTelemetry Logo" style="height: 30px; width: 30px; object-fit: contain; border-radius: 6px;">
 						OTel Night NYC @ NYT Building</h3>
 
 					<div class="flex-row-responsive" style="gap: 30px; max-width: 800px; width: 100%;">
@@ -528,15 +1043,30 @@
 								style="color: var(--accent-orange); margin-top: 0; margin-bottom: 12px; font-weight: bold; font-size: 1.15em;">
 								Open Volunteer Roles:</p>
 							<ul style="margin: 0; padding-left: 20px; line-height: 1.5; color: var(--text-muted);">
-								<li style="margin-bottom: 6px;"><strong>Event Ops:</strong> Venue setup, registration, & logistics.</li>
-								<li style="margin-bottom: 6px;"><strong>Comms Team:</strong> Social posts, photos, & live coverage.</li>
+								<li style="margin-bottom: 6px;"><strong>Event Ops:</strong> Venue setup, registration, &
+									logistics.</li>
+								<li style="margin-bottom: 6px;"><strong>Comms Team:</strong> Social posts, photos, &
+									live coverage.</li>
 								<li><strong>Sponsorships:</strong> Secure Q3/Q4 corporate venues.</li>
 							</ul>
 						</div>
-						<div class="glass-card" style="padding: 15px; display: flex; align-items: center; justify-content: center;">
-							<div class="qr-wrapper" style="border-color: var(--accent-orange); width: 140px; height: 140px;">
-								<img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://ocgroups.dev/cncf/group/5pcu8cb/event/pv5u8yj"
-									alt="QR Code for OTel Night NYC Event">
+						<div style="flex: 1.2; display: flex; gap: 20px; justify-content: center; align-items: stretch;">
+							<!-- RSVP QR -->
+							<div class="glass-card" style="padding: 12px; flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+								<div class="qr-wrapper" style="border-color: var(--accent-orange); width: 100px; height: 100px; padding: 4px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+									<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Focgroups.dev%2Fcncf%2Fgroup%2F5pcu8cb%2Fevent%2Fpv5u8yj"
+										alt="QR Code for OTel Night NYC Event" style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+								</div>
+								<p style="margin: 8px 0 0 0; font-size: 0.35em; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">1. RSVP Event</p>
+							</div>
+							
+							<!-- Slack QR -->
+							<div class="glass-card" style="padding: 12px; flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+								<div class="qr-wrapper" style="border-color: var(--accent-cyan); width: 100px; height: 100px; padding: 4px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+									<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fslack.cncf.io"
+										alt="QR Code for CNCF Slack" style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+								</div>
+								<p style="margin: 8px 0 0 0; font-size: 0.35em; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">2. Join Slack</p>
 							</div>
 						</div>
 					</div>
