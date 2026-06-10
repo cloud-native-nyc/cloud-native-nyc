@@ -886,84 +886,180 @@
 					Organizers: sustained support, nomination, majority vote with cross-employer guardrail.
 					Highlight the QR codes for applying and the benefits slide.
 				</aside>
-		</section>
+			</section>
 
-		<!-- Slide 4.6: CNCF Chapter Benefits -->
-		<section data-background-gradient="radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 60%, #020617 100%)">
-			<style>
-				.benefits-container { max-width: 1000px; margin: 0 auto; padding: 10px; font-family: 'Outfit', 'Inter', sans-serif; }
-				.benefits-header { text-align: center; margin-bottom: 20px; position: relative; }
-				.benefits-subtitle { font-size: 0.4em; color: var(--accent-orange); font-weight: 800; text-transform: uppercase; letter-spacing: 4px; display: inline-block; padding: 3px 10px; border: 1px solid rgba(255,159,67,0.2); border-radius: 20px; margin-bottom: 6px; background: rgba(255,159,67,0.03); }
-				.benefits-title { font-weight: 900; color: var(--text-primary); font-size: 1.4em; margin: 0; letter-spacing: -0.5px; }
-				
-				.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
-				
-				.benefit-card { text-align: left; background: var(--bg-card); backdrop-filter: blur(12px); border-radius: 16px; padding: 15px 18px; border: 1px solid var(--border-card); display: flex; align-items: flex-start; gap: 15px; box-shadow: var(--shadow-premium); transition: transform 0.3s ease; }
-				.benefit-card:hover { transform: translateY(-3px); }
-				
-				.benefit-icon { font-size: 1.3em; line-height: 1; margin-top: 2px; }
-				.benefit-info { flex: 1; }
-				.benefit-info h4 { margin: 0 0 5px 0; font-size: 0.7em; font-weight: 800; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px; }
-				.benefit-info p { margin: 0; font-size: 0.48em; line-height: 1.4; color: var(--text-muted); }
-				
-				.benefits-footer { margin-top: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-card); border-radius: 12px; padding: 10px 15px; text-align: center; }
-				.benefits-footer p { margin: 0; font-size: 0.4em; color: var(--text-secondary); line-height: 1.4; }
-			</style>
-			<div class="benefits-container">
-				<div class="benefits-header fragment fade-down">
-					<span class="benefits-subtitle">CNCF Rewards</span>
-					<h2 class="benefits-title">Chapter & Organizer Benefits</h2>
+			<!-- Slide 4.6: CNCF Chapter Benefits -->
+			<section
+				data-background-gradient="radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 60%, #020617 100%)">
+				<style>
+					.benefits-container {
+						max-width: 1000px;
+						margin: 0 auto;
+						padding: 10px;
+						font-family: 'Outfit', 'Inter', sans-serif;
+					}
+
+					.benefits-header {
+						text-align: center;
+						margin-bottom: 20px;
+						position: relative;
+					}
+
+					.benefits-subtitle {
+						font-size: 0.4em;
+						color: var(--accent-orange);
+						font-weight: 800;
+						text-transform: uppercase;
+						letter-spacing: 4px;
+						display: inline-block;
+						padding: 3px 10px;
+						border: 1px solid rgba(255, 159, 67, 0.2);
+						border-radius: 20px;
+						margin-bottom: 6px;
+						background: rgba(255, 159, 67, 0.03);
+					}
+
+					.benefits-title {
+						font-weight: 900;
+						color: var(--text-primary);
+						font-size: 1.4em;
+						margin: 0;
+						letter-spacing: -0.5px;
+					}
+
+					.benefits-grid {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						gap: 15px;
+						margin-top: 10px;
+					}
+
+					.benefit-card {
+						text-align: left;
+						background: var(--bg-card);
+						backdrop-filter: blur(12px);
+						border-radius: 16px;
+						padding: 15px 18px;
+						border: 1px solid var(--border-card);
+						display: flex;
+						align-items: flex-start;
+						gap: 15px;
+						box-shadow: var(--shadow-premium);
+						transition: transform 0.3s ease;
+					}
+
+					.benefit-card:hover {
+						transform: translateY(-3px);
+					}
+
+					.benefit-icon {
+						font-size: 1.3em;
+						line-height: 1;
+						margin-top: 2px;
+					}
+
+					.benefit-info {
+						flex: 1;
+					}
+
+					.benefit-info h4 {
+						margin: 0 0 5px 0;
+						font-size: 0.7em;
+						font-weight: 800;
+						color: var(--text-primary);
+						text-transform: uppercase;
+						letter-spacing: 0.5px;
+					}
+
+					.benefit-info p {
+						margin: 0;
+						font-size: 0.48em;
+						line-height: 1.4;
+						color: var(--text-muted);
+					}
+
+					.benefits-footer {
+						margin-top: 20px;
+						background: rgba(255, 255, 255, 0.02);
+						border: 1px solid var(--border-card);
+						border-radius: 12px;
+						padding: 10px 15px;
+						text-align: center;
+					}
+
+					.benefits-footer p {
+						margin: 0;
+						font-size: 0.4em;
+						color: var(--text-secondary);
+						line-height: 1.4;
+					}
+				</style>
+				<div class="benefits-container">
+					<div class="benefits-header fragment fade-down">
+						<span class="benefits-subtitle">CNCF Rewards</span>
+						<h2 class="benefits-title">Chapter & Organizer Benefits</h2>
+					</div>
+
+					<div class="benefits-grid">
+						<!-- Perk 1 -->
+						<div class="benefit-card fragment fade-right"
+							style="border-left: 3px solid var(--accent-cyan);">
+							<div class="benefit-icon">🎓</div>
+							<div class="benefit-info">
+								<h4>Vouchers & Discounts</h4>
+								<p>Receive <strong>5 free certification vouchers</strong> annually for active chapters,
+									plus a <strong>25% discount</strong> on Linux Foundation training exams (CKAD/KCNA).
+								</p>
+							</div>
+						</div>
+
+						<!-- Perk 2 -->
+						<div class="benefit-card fragment fade-left"
+							style="border-left: 3px solid var(--accent-green);">
+							<div class="benefit-icon">👕</div>
+							<div class="benefit-info">
+								<h4>Swag & KubeCon Perks</h4>
+								<p>Claim a <strong>$100 store credit swag coupon</strong> after 2 successful in-person
+									events, alongside discounts for global KubeCon conferences.</p>
+							</div>
+						</div>
+
+						<!-- Perk 3 -->
+						<div class="benefit-card fragment fade-right"
+							style="border-left: 3px solid var(--accent-orange);">
+							<div class="benefit-icon">🎖️</div>
+							<div class="benefit-info">
+								<h4>Credly Organizer Badges</h4>
+								<p>Earn official <strong>Credly recognition badges</strong> verifying your organizer
+									status and validating your community impact in making Cloud Native ubiquitous.</p>
+							</div>
+						</div>
+
+						<!-- Perk 4 -->
+						<div class="benefit-card fragment fade-left" style="border-left: 3px solid var(--accent-cyan);">
+							<div class="benefit-icon">💬</div>
+							<div class="benefit-info">
+								<h4>CNCF Support & Tools</h4>
+								<p>Gain access to exclusive organizer-only Slack channels, OCG platform hosting
+									coverage, and direct support from regional CNCF staff/ambassadors.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="benefits-footer fragment fade-up">
+						<p>✒️ <strong>Note:</strong> With over 200 chapters globally, CNCF cannot offer cash
+							sponsorships outside of these structured program benefits, but continually adds new
+							incentives.</p>
+					</div>
 				</div>
-				
-				<div class="benefits-grid">
-					<!-- Perk 1 -->
-					<div class="benefit-card fragment fade-right" style="border-left: 3px solid var(--accent-cyan);">
-						<div class="benefit-icon">🎓</div>
-						<div class="benefit-info">
-							<h4>Vouchers & Discounts</h4>
-							<p>Receive <strong>5 free certification vouchers</strong> annually for active chapters, plus a <strong>25% discount</strong> on Linux Foundation training exams (CKAD/KCNA).</p>
-						</div>
-					</div>
-					
-					<!-- Perk 2 -->
-					<div class="benefit-card fragment fade-left" style="border-left: 3px solid var(--accent-green);">
-						<div class="benefit-icon">👕</div>
-						<div class="benefit-info">
-							<h4>Swag & KubeCon Perks</h4>
-							<p>Claim a <strong>$100 store credit swag coupon</strong> after 2 successful in-person events, alongside discounts for global KubeCon conferences.</p>
-						</div>
-					</div>
-					
-					<!-- Perk 3 -->
-					<div class="benefit-card fragment fade-right" style="border-left: 3px solid var(--accent-orange);">
-						<div class="benefit-icon">🎖️</div>
-						<div class="benefit-info">
-							<h4>Credly Organizer Badges</h4>
-							<p>Earn official <strong>Credly recognition badges</strong> verifying your organizer status and validating your community impact in making Cloud Native ubiquitous.</p>
-						</div>
-					</div>
-					
-					<!-- Perk 4 -->
-					<div class="benefit-card fragment fade-left" style="border-left: 3px solid var(--accent-cyan);">
-						<div class="benefit-icon">💬</div>
-						<div class="benefit-info">
-							<h4>CNCF Support & Tools</h4>
-							<p>Gain access to exclusive organizer-only Slack channels, OCG platform hosting coverage, and direct support from regional CNCF staff/ambassadors.</p>
-						</div>
-					</div>
-				</div>
-				
-				<div class="benefits-footer fragment fade-up">
-					<p>✒️ <strong>Note:</strong> With over 200 chapters globally, CNCF cannot offer cash sponsorships outside of these structured program benefits, but continually adds new incentives.</p>
-				</div>
-			</div>
-			<aside class="notes">
-				Explain that CNCF offers substantial rewards to keep chapters active.
-				Point out the 5 free cert vouchers (requires 1 in-person event/quarter of >10 attendees).
-				Highlight the $100 swag coupon and training discounts.
-				Clarify that cash sponsorships aren't possible due to scale, but these tools/perks deliver high value.
-			</aside>
-		</section>
+				<aside class="notes">
+					Explain that CNCF offers substantial rewards to keep chapters active.
+					Point out the 5 free cert vouchers (requires 1 in-person event/quarter of >10 attendees).
+					Highlight the $100 swag coupon and training discounts.
+					Clarify that cash sponsorships aren't possible due to scale, but these tools/perks deliver high
+					value.
+				</aside>
+			</section>
 
 			<!-- Slide 5: Governance -->
 			<section data-background-gradient="linear-gradient(to bottom, #0f172a, #1e293b)">
@@ -1033,8 +1129,10 @@
 						26th 🗓️</h2>
 					<h3
 						style="color: var(--accent-orange); font-size: 0.95em; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-						<img src="https://avatars.githubusercontent.com/u/49998002?s=280&v=4" alt="OpenTelemetry Logo" style="height: 30px; width: 30px; object-fit: contain; border-radius: 6px;">
-						OTel Night NYC @ NYT Building</h3>
+						<img src="https://avatars.githubusercontent.com/u/49998002?s=280&v=4" alt="OpenTelemetry Logo"
+							style="height: 30px; width: 30px; object-fit: contain; border-radius: 6px;">
+						OTel Night NYC @ NYT Building
+					</h3>
 
 					<div class="flex-row-responsive" style="gap: 30px; max-width: 800px; width: 100%;">
 						<div
@@ -1050,23 +1148,34 @@
 								<li><strong>Sponsorships:</strong> Secure Q3/Q4 corporate venues.</li>
 							</ul>
 						</div>
-						<div style="flex: 1.2; display: flex; gap: 20px; justify-content: center; align-items: stretch;">
+						<div
+							style="flex: 1.2; display: flex; gap: 20px; justify-content: center; align-items: stretch;">
 							<!-- RSVP QR -->
-							<div class="glass-card" style="padding: 12px; flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-								<div class="qr-wrapper" style="border-color: var(--accent-orange); width: 100px; height: 100px; padding: 4px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+							<div class="glass-card"
+								style="padding: 12px; flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+								<div class="qr-wrapper"
+									style="border-color: var(--accent-orange); width: 100px; height: 100px; padding: 4px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
 									<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Focgroups.dev%2Fcncf%2Fgroup%2F5pcu8cb%2Fevent%2Fpv5u8yj"
-										alt="QR Code for OTel Night NYC Event" style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+										alt="QR Code for OTel Night NYC Event"
+										style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
 								</div>
-								<p style="margin: 8px 0 0 0; font-size: 0.35em; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">1. RSVP Event</p>
+								<p
+									style="margin: 8px 0 0 0; font-size: 0.35em; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+									1. RSVP Event</p>
 							</div>
-							
+
 							<!-- Slack QR -->
-							<div class="glass-card" style="padding: 12px; flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-								<div class="qr-wrapper" style="border-color: var(--accent-cyan); width: 100px; height: 100px; padding: 4px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+							<div class="glass-card"
+								style="padding: 12px; flex: 1; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+								<div class="qr-wrapper"
+									style="border-color: var(--accent-cyan); width: 100px; height: 100px; padding: 4px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
 									<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https%3A%2F%2Fslack.cncf.io"
-										alt="QR Code for CNCF Slack" style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
+										alt="QR Code for CNCF Slack"
+										style="width: 100%; height: 100%; object-fit: contain; border-radius: 4px;">
 								</div>
-								<p style="margin: 8px 0 0 0; font-size: 0.35em; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">2. Join Slack</p>
+								<p
+									style="margin: 8px 0 0 0; font-size: 0.35em; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+									2. Join Slack</p>
 							</div>
 						</div>
 					</div>

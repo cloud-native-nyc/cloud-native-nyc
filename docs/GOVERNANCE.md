@@ -17,6 +17,8 @@ This document establishes a transparent framework for organizing Cloud Native NY
 ## 3. Contributor Ladder
 Our contributor ladder provides a transparent, predictable path for community members to grow their impact and receive formal recognition.
 
+This ladder is aligned with the [CNCF Community Groups program](https://github.com/cncf/communitygroups/#how-to-apply). For the official CNCF process to apply as a volunteer or organizer, see [github.com/cncf/communitygroups](https://github.com/cncf/communitygroups/#how-to-apply).
+
 ### Attendees
 Everyone who participates in our events.
 * **Expectations:**
@@ -27,7 +29,7 @@ Everyone who participates in our events.
 Community members who help with specific tasks or events.
 * **How to become one:** 
   * Express interest to any organizer.
-  * Join our meetups (in person or virtually) consistently for at least 3 months, OR actively support 4 consecutive events.
+  * Join our meetups (in person or virtually) consistently over a period of time, OR actively support multiple consecutive events.
 * **Expectations:**
   * Complete committed tasks or communicate early if blocked.
   * Follow guidance from team leads.
@@ -39,19 +41,19 @@ Community members who help with specific tasks or events.
 ### Team Leads
 Organizers or highly active volunteers who coordinate a functional team.
 * **How to become one:** Volunteer or be nominated within your team, confirmed by team consensus.
-* **Term:** 1 year, with the option to rotate or continue.
+* **Term:** a set period (e.g., 1 year), with the option to rotate or continue.
 * **Expectations:**
   * Coordinate team activities and meetings.
   * Ensure tasks are assigned and tracked.
   * Communicate blockers early to other leads.
   * Mentor team members and delegate effectively.
   * Participate in cross-team coordination.
-* **Stepping Down:** Provide 2 weeks' notice when possible and mentor your replacement during the transition.
+* **Stepping Down:** Provide reasonable notice when possible and mentor your replacement during the transition.
 
 ### Organizers
 The core team responsible for running Cloud Native NYC.
 * **How to become one:**
-  * Actively support community operations continuously for 6 months (or 4 consecutive events).
+  * Actively support community operations continuously over a sustained period (or multiple consecutive events).
   * Be nominated by an existing organizer.
   * Receive approval by a **simple majority vote** of active organizers. *Anti-Capture Guardrail: This majority must include at least one vote from an organizer who works for a different employer than the candidate.*
 * **Expectations:**
@@ -73,7 +75,7 @@ Former organizers who step down in good standing:
 * Hold no voting rights or responsibilities while emeritus.
 
 ## 4. Community Ecosystem Perks (The "Win-Win")
-To drive robust engagement, we offer explicit benefits for distinct roles within our chapter:
+To drive robust engagement, we offer explicit benefits for distinct roles within our chapter. The full list of CNCF Community Groups benefits is available at [github.com/cncf/communitygroups/#benefits-of-joining-the-cncf-community-groups-program](https://github.com/cncf/communitygroups/#benefits-of-joining-the-cncf-community-groups-program).
 * **Students & Engineers:** Expand your portfolio, gain mentorship, and access technical talent pipelines.
 * **Tech Leads & Organizers:** Priority slots for community keynotes and tech talks (maintaining vendor neutrality standards).
 * **Sponsoring Organizations:** Direct alignment with Sponsorships and Venues teams to coordinate hackathons, prioritize venue hosting, and streamline brand visibility for tech hiring.

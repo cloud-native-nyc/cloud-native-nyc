@@ -1,0 +1,10 @@
+# CODEOWNERS for Cloud Native NYC
+# Defines owners for specific files/paths
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global fallback — all organizers are default owners for everything
+* @scottrigby @ahmedbebars @juliafmorgado @dgrizzanti @tsykesbuilds @tineoc
+
+# The governance document is owned by all active organizers
+# Changes require review from at least one of them
+docs/GOVERNANCE.md @scottrigby @ahmedbebars @juliafmorgado @dgrizzanti @tsykesbuilds @tineoc

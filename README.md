@@ -56,9 +56,15 @@ Our governance model is an open-source draft. Read and contribute at:
 
 ## Connect
 
-- **Chapter Portal**: https://ocgroups.dev/cncf/group/5pcu8cb  
+- **CNCF Community Groups**: https://github.com/cncf/communitygroups  
 - **Slack**: `#cloud-native-new-york` on [CNCF Slack](https://slack.cncf.io)  
 - **LinkedIn**: https://www.linkedin.com/company/cloud-native-nyc  
+
+## Get Involved
+
+- **Volunteer**: [Apply via GitHub](https://github.com/cncf/communitygroups/issues/new?template=volunteer-request.yaml)  
+- **Organizer**: [Apply via GitHub](https://github.com/cncf/communitygroups/issues/new?template=organizer-request.yaml)  
+- **Benefits**: [CNCF Community Groups Benefits](https://github.com/cncf/communitygroups/#benefits-of-joining-the-cncf-community-groups-program)  
 
 ---
 
